@@ -9,16 +9,20 @@ public class Main {
         while (true) {
             printMenu(stepTracker);
             inputChecker.checkMenuInput(scanner, userInput);
-            if (userInput[0] == 1) {
-                saveSteps(scanner, stepTracker);    //запись  шагов
-            } else if (userInput[0] == 2) {
-                printMonthStat(scanner, stepTracker); //печать статистики
-            } else if (userInput[0] == 3) {
-                changeGoal(scanner, stepTracker);   // изменение цели
-            } else if (userInput[0] == 4) {
-                sayGoodbye();                       // Прощание
-                return;
-            } else {
+            switch (userInput[0]) {
+                case 1:
+                    saveSteps(scanner, stepTracker);    //запись  шагов
+                    break;
+                case 2:
+                    printMonthStat(scanner, stepTracker); //печать статистики
+                    break;
+                case 3:
+                    changeGoal(scanner, stepTracker);   // изменение цели
+                    break;
+                case 4:
+                    sayGoodbye();                       // Прощание
+                    return;
+                default:
                 System.out.println("Такой команды нет");
             }
         }
